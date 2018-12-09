@@ -131,3 +131,41 @@ img {
 
 /* Nav
    ========================================================================== */
+.nav {
+  width: 250px;
+  height: 100vh;
+  position: fixed;
+  left: 0;
+  top: 0;
+  background: #212121;
+  padding: 20px 0;
+  text-align: center; }
+
+.nav__logo {
+  height: 120px; }
+
+.nav__links {
+  text-align: left;
+  padding-top: 20px;
+  height: calc(100vh - 75px - 120px - 45px - 40px);
+  overflow-y: scroll; }
+  .nav__links a {
+    color: #fff;
+    text-decoration: none;
+    padding: 20px 30px;
+    display: block;
+    transition: background 0.3s; }
+    .nav__links a:hover {
+      background: #2e2e2e; }
+
+.nav__emergency {
+  height: 75px;
+  color: #7fb23c;
+  text-align: left;
+  padding: 0 30px;
+  padding-top: 15px; }
+  .nav__emergency h4 {
+    font-weight: bold; }
+
+.nav__socials {
+  height: 45px; }
