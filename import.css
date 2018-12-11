@@ -169,3 +169,101 @@ img {
 
 .nav__socials {
   height: 45px; }
+
+.about, .landing {
+  width: calc(100% - 250px);
+  height: 100vh;
+  position: relative;
+  margin-left: 250px; }
+
+/* landing
+   ========================================================================== */
+.landing {
+  background: url(assets/bg.jpg) no-repeat center center;
+  background-size: cover; }
+
+.landing__vignette {
+  background: rgba(127, 178, 60, 0.9);
+  display: inline-block;
+  position: absolute;
+  right: 0;
+  bottom: 100px;
+  color: #fff;
+  padding: 25px;
+  border-bottom-left-radius: 10px;
+  border-top-left-radius: 10px; }
+  .landing__vignette h4 {
+    color: #172927;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px; }
+  .landing__vignette ul {
+    border-left: 1px solid #fff;
+    padding-left: 20px;
+    margin-left: 100px; }
+  .landing__vignette .vignette__phone {
+    font-weight: bold;
+    font-size: 24px;
+    margin-bottom: 5px; }
+  .landing__vignette .vignette__schedule {
+    font-size: 18px;
+    margin-bottom: 5px; }
+  .landing__vignette .vignette__text {
+    font-size: 14px; }
+
+/* About
+   ========================================================================== */
+.about {
+  background: #fff; }
+
+.about__desc {
+  background: #7fb23c;
+  padding: 100px 0;
+  z-index: -1;
+  text-align: center; }
+  .about__desc p {
+    width: 65%;
+    text-align: left;
+    display: inline-block;
+    line-height: 1.5;
+    font-size: 18px;
+    color: #fff; }
+
+.about__ryan {
+  width: 100%;
+  text-align: center;
+  padding-top: 150px;
+  font-size: 0; }
+  .about__ryan img {
+    width: 200px;
+    height: 200px;
+    border-radius: 200px;
+    vertical-align: middle; }
+  .about__ryan h4 {
+    color: #7fb23c;
+    font-size: 26px;
+    margin-bottom: 20px;
+    display: inline-block; }
+    .about__ryan h4:after {
+      width: 25%;
+      margin-left: 2px;
+      height: 1px;
+      content: '';
+      position: relative;
+      display: block;
+      margin-top: 20px;
+      background: #7fb23c; }
+
+.about__ryan-container {
+  display: inline-block;
+  margin: 0 auto;
+  width: 50%; }
+
+.about__text {
+  display: inline-block;
+  width: calc(100% - 200px);
+  padding-left: 50px;
+  text-align: left;
+  vertical-align: middle; }
+  .about__text p {
+    font-size: 16px; }
