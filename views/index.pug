@@ -64,10 +64,45 @@ block content
                     h4 Ryan Sauvage
                     p Depuis mon plus jeune âge, la nature et les arbres m’ont toujours passionné. Attiré par le travail en plein air et le plaisir de grimper aux arbres, c’est en toute logique que j’ai créé ma société.
 
+    // ABATTAGE
     section.abattage(style="background: url('{% static 'bg.jpg' %}') no-repeat center center;  background-size: cover;")
         div.section__container
             h3 Abattage
             p.section__desc Nous abattons vos arbres dangereux ou malades dans des espaces dégagés. Nous procédons aussi par démontage avec rétention dans les endroits plus confinés.
+
+            div.owl-carousel__container
+                div.owl-carousel.owl-theme(style="font-size: 20px").
+                    {% for abattage in abattages.all %}
+                        <div class="owl-element">
+                            <div class="owl-img" style="background: url('{{abattage.image.url}}') no-repeat center center; background-size: cover;"></div>
+                        </div>
+                    {% endfor %}
+
+                div.abattage__note
+                    p * Tous nos chantiers sont nettoyés et les déchets évacués
+
+
+    // ELAGAGE
+    section.abattage(style="background: url('{% static 'bg.jpg' %}') no-repeat center center;  background-size: cover;")
+        div.section__container
+            h3 Elagage
+            p.section__desc Pour la santé de vos arbres remarquables et la beauté de leur silhouette, nous en effectuons une taille douce en allégeant les branches et en retirant le bois mort. Nous élaguons également les arbres envahissants afin de procurer de la lumière à votre propriété.
+
+            div.owl-carousel__container
+                div.owl-carousel.owl-theme(style="font-size: 20px").
+                    {% for elagage in elagages.all %}
+                        <div class="owl-element">
+                            <div class="owl-img" style="background: url('{{elagage.image.url}}') no-repeat center center; background-size: cover;"></div>
+                        </div>
+                    {% endfor %}
+
+
+    // DEBOISEMENT
+
+    section.abattage(style="background: url('{% static 'bg.jpg' %}') no-repeat center center;  background-size: cover;")
+        div.section__container
+            h3 Déboisement
+            p.section__desc Vous avez envie de construire sur un terrain boisé, nous pouvons procéder à l’élimination des arbres et des racines afin de dégager l’espace à bâtir.
 
             div.owl-carousel__container
                 div.owl-carousel.owl-theme(style="font-size: 20px").
@@ -79,3 +114,42 @@ block content
 
                 div.abattage__note
                     p * Tous nos chantiers sont nettoyés et les déchets évacués
+
+
+    // GRUE
+    section.abattage(style="background: url('{% static 'bg.jpg' %}') no-repeat center center;  background-size: cover;")
+        div.section__container
+            h3 Démontage à la grue
+            p.section__desc La grue est utilisée principalement dans les endroits inaccessibles et pour préserver les propriétés avoisinantes : technique peu courante dont nous faisons notre spécialité.
+
+            h4 VIDEO
+
+
+    // ROGNAGE
+
+    section.abattage(style="background: url('{% static 'bg.jpg' %}') no-repeat center center;  background-size: cover;")
+        div.section__container
+            h3 Rognage des souches
+            p.section__desc Pour parachever les travaux d’abattage, nous vous proposons l’élimination des souches par rognage et gyrobroyage, ce qui rendra le terrain prêt à toute nouvelle plantation.
+
+            div.owl-carousel__container
+                div.owl-carousel.owl-theme(style="font-size: 20px").
+                    {% for rognage in rognages.all %}
+                        <div class="owl-element">
+                            <div class="owl-img" style="background: url('{{rognage.image.url}}') no-repeat center center; background-size: cover;"></div>
+                        </div>
+                    {% endfor %}
+
+    // EQUIPEMENT
+    section.abattage(style="background: url('{% static 'bg.jpg' %}') no-repeat center center;  background-size: cover;")
+        div.section__container
+            h3 Equipement
+            p.section__desc Nous travaillons avec un matériel de pointe adapté à toutes situations, pour vous offrir un résultat impeccable et répondant à vos attentes.
+
+            div.owl-carousel__container
+                div.owl-carousel.owl-theme(style="font-size: 20px").
+                    {% for equipement in equipements.all %}
+                        <div class="owl-element">
+                            <div class="owl-img" style="background: url('{{equipement.image.url}}') no-repeat center center; background-size: cover;"></div>
+                        </div>
+                    {% endfor %}
