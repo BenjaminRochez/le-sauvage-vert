@@ -3,15 +3,15 @@ extends layout.pug
 
 block content
 
-    section.welcome
+    section.welcome(style="background: url('{% static 'bg.jpg' %}') no-repeat center center;  background-size: cover;")
         div.welcome__container
-            img.welcome__logo(src="assets/logo.png")
+            img.welcome__logo(src="{% static 'logo.png' %}")
             h1.welcome__title A votre service et au service de la nature
         p.welcome__note ABATTAGE - ELAGAGE - DEBOISEMENT
 
 
     nav.nav
-        img.nav__logo(src="assets/logo.png")
+        img.nav__logo(src="{% static 'logo.png' %}")
         ul.nav__links
             li
                 a(href="#") Home
@@ -41,7 +41,7 @@ block content
             li
                 a(href="#") Ig
 
-    section.landing
+    section.landing(style="background: url('{% static 'bg.jpg' %}') no-repeat center center;  background-size: cover;")
         div.landing__vignette
             h4 Arbre menaçant ou dangereux ?
             ul
@@ -59,25 +59,23 @@ block content
 
         div.about__ryan
             div.about__ryan-container
-                img(src="assets/ryan.jpg")
+                img(src="{% static 'ryan.jpg' %}")
                 div.about__text
                     h4 Ryan Sauvage
                     p Depuis mon plus jeune âge, la nature et les arbres m’ont toujours passionné. Attiré par le travail en plein air et le plaisir de grimper aux arbres, c’est en toute logique que j’ai créé ma société.
 
-    section.abattage
+    section.abattage(style="background: url('{% static 'bg.jpg' %}') no-repeat center center;  background-size: cover;")
         div.section__container
             h3 Abattage
             p.section__desc Nous abattons vos arbres dangereux ou malades dans des espaces dégagés. Nous procédons aussi par démontage avec rétention dans les endroits plus confinés.
+
             div.owl-carousel__container
-                div.owl-carousel.owl-theme(style="font-size: 20px")
-                    div.owl-element
-                        div.owl-img(style="background: url('assets/img/1.jpg') no-repeat center center; background-size: cover;")
-                    div.owl-element
-                        div.owl-img(style="background: url('assets/img/2.jpg') no-repeat center center; background-size: cover;")
-                    div.owl-element
-                        div.owl-img(style="background: url('assets/img/1.jpg') no-repeat center center; background-size: cover;")
-                    div.owl-element
-                        div.owl-img(style="background: url('assets/img/2.jpg') no-repeat center center; background-size: cover;")
+                div.owl-carousel.owl-theme(style="font-size: 20px").
+                    {% for deboisement in deboisements.all %}
+                        <div class="owl-element">
+                            <div class="owl-img" style="background: url('{{deboisement.image.url}}') no-repeat center center; background-size: cover;"></div>
+                        </div>
+                    {% endfor %}
 
                 div.abattage__note
                     p * Tous nos chantiers sont nettoyés et les déchets évacués

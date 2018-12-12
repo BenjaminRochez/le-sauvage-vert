@@ -19,6 +19,7 @@ gulp.task('sass', function () {
         return this.emit('end');
     }))
     .pipe(gulp.dest('./'))
+    .pipe(gulp.dest('./website/sauvage/static/'))
     .pipe(browserSync.stream());
 });
 
@@ -39,6 +40,7 @@ gulp.task('pug', function buildHTML() {
         }).write(err.line + ': ' + err.message);
         return this.emit('end');
     }))
+    .pipe(gulp.dest('./website/sauvage/templates/sauvage/'))
     .pipe(gulp.dest('./'));
 });
 
