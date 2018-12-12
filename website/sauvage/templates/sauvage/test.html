@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<hmtl>
+    <head>
+        <title>Blog</title>
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'import.css' %}">
+    </head>
+
+    <body>
+    <h1>Blog</h1>
+
+    <h2>Abattage</h2>
+    <div>
+        {% for abattage in abattages.all %}
+            {{abattage.title}}
+            {{abattage.image}}
+        {% endfor %}
+    </div>
+
+    <h2>Deboisement</h2>
+    <div>
+        {% for deboisement in deboisements.all %}
+            {{deboisement.title}}
+            {{deboisement.image}}
+        {% endfor %}
+    </div>
+    </body>
+</hmtl>

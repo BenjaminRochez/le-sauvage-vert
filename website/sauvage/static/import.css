@@ -1,0 +1,569 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+/* Usage==========================================================================
+   .my-box {
+      padding: 10px;
+
+        @include for-desktop-up {
+            padding: 20px;
+         }
+    }
+   ========================================================================== */
+* {
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+
+*, *:after, *:before {
+  box-sizing: border-box;
+  outline: none; }
+
+.cf:before,
+.cf:after {
+  content: " ";
+  /* 1 */
+  display: table;
+  /* 2 */ }
+
+.cf:after {
+  clear: both; }
+
+html, body {
+  width: 100%;
+  overflow-x: hidden; }
+
+body {
+  font-family: 'Montserrat', sans-serif; }
+
+.s-container {
+  width: 100%;
+  padding: 0 30px;
+  margin: 0 auto;
+  position: relative;
+  max-width: 1200px;
+  font-size: 0; }
+
+img {
+  max-width: 100%; }
+
+/**
+ * Owl Carousel v2.3.4
+ * Copyright 2013-2018 David Deutsch
+ * Licensed under: SEE LICENSE IN https://github.com/OwlCarousel2/OwlCarousel2/blob/master/LICENSE
+ */
+/*
+ *  Owl Carousel - Core
+ */
+.owl-carousel {
+  display: none;
+  width: 100%;
+  -webkit-tap-highlight-color: transparent;
+  /* position relative and z-index fix webkit rendering fonts issue */
+  position: relative;
+  z-index: 1; }
+
+.owl-carousel .owl-stage {
+  position: relative;
+  -ms-touch-action: pan-Y;
+  touch-action: manipulation;
+  -moz-backface-visibility: hidden;
+  /* fix firefox animation glitch */ }
+
+.owl-carousel .owl-stage:after {
+  content: ".";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  line-height: 0;
+  height: 0; }
+
+.owl-carousel .owl-stage-outer {
+  position: relative;
+  overflow: hidden;
+  /* fix for flashing background */
+  -webkit-transform: translate3d(0px, 0px, 0px); }
+
+.owl-carousel .owl-wrapper,
+.owl-carousel .owl-item {
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  -ms-transform: translate3d(0, 0, 0); }
+
+.owl-carousel .owl-item {
+  position: relative;
+  min-height: 1px;
+  float: left;
+  -webkit-backface-visibility: hidden;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none; }
+
+.owl-carousel .owl-item img {
+  display: block;
+  width: 100%; }
+
+.owl-carousel .owl-dots.disabled {
+  display: none; }
+
+.owl-carousel .owl-nav.disabled {
+  display: block; }
+
+.owl-carousel .owl-nav .owl-prev,
+.owl-carousel .owl-nav .owl-next,
+.owl-carousel .owl-dot {
+  cursor: pointer;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none; }
+
+.owl-carousel .owl-nav button.owl-prev,
+.owl-carousel .owl-nav button.owl-next,
+.owl-carousel button.owl-dot {
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0 !important;
+  font: inherit; }
+
+.owl-carousel.owl-loaded {
+  display: block; }
+
+.owl-carousel.owl-loading {
+  opacity: 0;
+  display: block; }
+
+.owl-carousel.owl-hidden {
+  opacity: 0; }
+
+.owl-carousel.owl-refresh .owl-item {
+  visibility: hidden; }
+
+.owl-carousel.owl-drag .owl-item {
+  -ms-touch-action: pan-y;
+  touch-action: pan-y;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none; }
+
+.owl-carousel.owl-grab {
+  cursor: move;
+  cursor: grab; }
+
+.owl-carousel.owl-rtl {
+  direction: rtl; }
+
+.owl-carousel.owl-rtl .owl-item {
+  float: right; }
+
+/* No Js */
+.no-js .owl-carousel {
+  display: block; }
+
+/*
+ *  Owl Carousel - Animate Plugin
+ */
+.owl-carousel .animated {
+  animation-duration: 1000ms;
+  animation-fill-mode: both; }
+
+.owl-carousel .owl-animated-in {
+  z-index: 0; }
+
+.owl-carousel .owl-animated-out {
+  z-index: 1; }
+
+.owl-carousel .fadeOut {
+  animation-name: fadeOut; }
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1; }
+  100% {
+    opacity: 0; } }
+
+/*
+ * 	Owl Carousel - Auto Height Plugin
+ */
+.owl-height {
+  transition: height 500ms ease-in-out; }
+
+/*
+ * 	Owl Carousel - Lazy Load Plugin
+ */
+.owl-carousel .owl-item {
+  /**
+			This is introduced due to a bug in IE11 where lazy loading combined with autoheight plugin causes a wrong
+			calculation of the height of the owl-item that breaks page layouts
+		 */ }
+
+.owl-carousel .owl-item .owl-lazy {
+  opacity: 0;
+  transition: opacity 400ms ease; }
+
+.owl-carousel .owl-item .owl-lazy[src^=""], .owl-carousel .owl-item .owl-lazy:not([src]) {
+  max-height: 0; }
+
+.owl-carousel .owl-item img.owl-lazy {
+  transform-style: preserve-3d; }
+
+/*
+ * 	Owl Carousel - Video Plugin
+ */
+.owl-carousel .owl-video-wrapper {
+  position: relative;
+  height: 100%;
+  background: #000; }
+
+.owl-carousel .owl-video-play-icon {
+  position: absolute;
+  height: 80px;
+  width: 80px;
+  left: 50%;
+  top: 50%;
+  margin-left: -40px;
+  margin-top: -40px;
+  background: url("owl.video.play.png") no-repeat;
+  cursor: pointer;
+  z-index: 1;
+  -webkit-backface-visibility: hidden;
+  transition: transform 100ms ease; }
+
+.owl-carousel .owl-video-play-icon:hover {
+  -ms-transform: scale(1.3, 1.3);
+  transform: scale(1.3, 1.3); }
+
+.owl-carousel .owl-video-playing .owl-video-tn,
+.owl-carousel .owl-video-playing .owl-video-play-icon {
+  display: none; }
+
+.owl-carousel .owl-video-tn {
+  opacity: 0;
+  height: 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  transition: opacity 400ms ease; }
+
+.owl-carousel .owl-video-frame {
+  position: relative;
+  z-index: 1;
+  height: 100%;
+  width: 100%; }
+
+p {
+  line-height: 1.5; }
+
+/* Vars
+   ========================================================================== */
+/* Site specific
+   ========================================================================== */
+/* Welcome
+   ========================================================================== */
+.welcome {
+  width: 100%;
+  height: 100vh; }
+  .welcome:after {
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.75);
+    display: block;
+    content: '';
+    z-index: 0;
+    position: absolute;
+    top: 0;
+    left: 0; }
+
+.welcome__container {
+  z-index: 1;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  text-align: center;
+  transform: translate3d(-50%, -50%, 0); }
+
+.welcome__logo {
+  width: 400px; }
+
+.welcome__title {
+  color: #fff;
+  font-size: 40px;
+  margin-top: 30px; }
+
+.welcome__note {
+  position: absolute;
+  left: 50%;
+  z-index: 1;
+  bottom: 50px;
+  transform: translateX(-50%);
+  color: #fff;
+  font-size: 18px; }
+
+/* Nav
+   ========================================================================== */
+.nav {
+  width: 250px;
+  height: 100vh;
+  position: fixed;
+  left: 0;
+  top: 0;
+  background: #212121;
+  padding: 20px 0;
+  text-align: center; }
+
+.nav__logo {
+  height: 100px;
+  padding: 10px 0; }
+
+.nav__links {
+  text-align: left;
+  padding-top: 20px;
+  height: calc(100vh - 75px - 120px - 45px - 40px);
+  overflow-y: scroll; }
+  .nav__links a {
+    color: #fff;
+    text-decoration: none;
+    padding: 20px 30px;
+    display: block;
+    transition: background 0.3s; }
+    .nav__links a:hover {
+      background: #2e2e2e; }
+
+.nav__emergency {
+  height: 75px;
+  color: #7fb23c;
+  text-align: left;
+  padding: 0 30px;
+  padding-top: 15px; }
+  .nav__emergency h4 {
+    font-weight: bold; }
+
+.nav__socials {
+  height: 45px; }
+
+.about, .landing, .abattage, .elagage, .deboisement, .grue, .rognage, .equipement, .contact {
+  width: calc(100% - 250px);
+  min-height: 100vh;
+  position: relative;
+  margin-left: 250px; }
+
+/* landing
+   ========================================================================== */
+.landing {
+  background: url(assets/bg.jpg) no-repeat center center;
+  background-size: cover; }
+
+.landing__vignette {
+  background: rgba(127, 178, 60, 0.9);
+  display: inline-block;
+  position: absolute;
+  right: 0;
+  bottom: 100px;
+  color: #fff;
+  padding: 25px;
+  border-bottom-left-radius: 10px;
+  border-top-left-radius: 10px; }
+  .landing__vignette h4 {
+    color: #172927;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px; }
+  .landing__vignette ul {
+    border-left: 1px solid #fff;
+    padding-left: 20px;
+    margin-left: 100px; }
+  .landing__vignette .vignette__phone {
+    font-weight: bold;
+    font-size: 24px;
+    margin-bottom: 5px; }
+  .landing__vignette .vignette__schedule {
+    font-size: 18px;
+    margin-bottom: 5px; }
+  .landing__vignette .vignette__text {
+    font-size: 14px; }
+
+/* About
+   ========================================================================== */
+.about {
+  background: #fff; }
+
+.about__desc {
+  background: #7fb23c;
+  padding: 100px 0;
+  z-index: -1;
+  text-align: center; }
+  .about__desc p {
+    width: 65%;
+    text-align: left;
+    display: inline-block;
+    line-height: 1.5;
+    font-size: 18px;
+    color: #fff; }
+
+.about__ryan {
+  width: 100%;
+  text-align: center;
+  padding-top: 150px;
+  font-size: 0; }
+  .about__ryan img {
+    width: 200px;
+    height: 200px;
+    border-radius: 200px;
+    vertical-align: middle; }
+  .about__ryan h4 {
+    color: #7fb23c;
+    font-size: 26px;
+    margin-bottom: 20px;
+    display: inline-block; }
+    .about__ryan h4:after {
+      width: 25%;
+      margin-left: 2px;
+      height: 1px;
+      content: '';
+      position: relative;
+      display: block;
+      margin-top: 20px;
+      background: #7fb23c; }
+
+.about__ryan-container {
+  display: inline-block;
+  margin: 0 auto;
+  width: 50%; }
+
+.about__text {
+  display: inline-block;
+  width: calc(100% - 200px);
+  padding-left: 50px;
+  text-align: left;
+  vertical-align: middle; }
+  .about__text p {
+    font-size: 16px; }
+
+/* Section
+   ========================================================================== */
+.section__container {
+  max-width: 65%;
+  margin: 0 auto;
+  z-index: 2;
+  padding: 100px 0;
+  text-align: center;
+  position: relative; }
+  .section__container h3 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    position: relative;
+    display: inline-block;
+    text-align: center; }
+    .section__container h3:after {
+      background: #7fb23c;
+      height: 2px;
+      width: 50%;
+      content: '';
+      display: inline-block;
+      margin-top: 20px; }
+
+.section__desc {
+  margin-bottom: 50px; }
+
+/* Abattage
+   ========================================================================== */
+.abattage {
+  background: url("assets/bg.jpg") no-repeat center center;
+  background-size: cover; }
+  .abattage h3 {
+    color: #7fb23c; }
+  .abattage p {
+    color: #fff;
+    font-weight: 500;
+    font-size: 18px; }
+  .abattage:after {
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    display: block;
+    content: '';
+    z-index: 0;
+    position: absolute;
+    top: 0;
+    left: 0; }
+
+.abattage__note {
+  position: absolute;
+  bottom: 0;
+  right: 20px; }
+  .abattage__note p {
+    font-size: 14px;
+    font-weight: 400; }
+
+/* owl
+   ========================================================================== */
+.owl-element {
+  padding: 20px; }
+
+.owl-img {
+  height: 250px;
+  content: ''; }
+
+.owl-carousel__container {
+  position: relative; }
+
+.owl-nav {
+  color: #fff; }
+
+.owl-prev, .owl-next {
+  top: 50%;
+  transform: translateY(-50%) scale(3);
+  position: absolute; }
+
+.owl-prev {
+  left: -20px; }
+
+.owl-next {
+  right: -20px; }
