@@ -1,8 +1,11 @@
 @import 'reset';
 @import 'breakpoints';
 @import 'globals';
+@import 'owl';
 
-
+p{
+  line-height: 1.5;
+}
 /* Vars
    ========================================================================== */
 $green: #7fb23c;
@@ -26,11 +29,15 @@ $black: #212121;
     background: rgba(0,0,0, .75);
     display: block;
     content: '';
-    z-index: 2;
+    z-index: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
   }
 }
 
 .welcome__container{
+  z-index: 1;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -51,6 +58,7 @@ $black: #212121;
 .welcome__note{
   position: absolute;
   left: 50%;
+  z-index: 1;
   bottom: 50px;
   transform: translateX(-50%);
   color: #fff;
@@ -73,7 +81,8 @@ $black: #212121;
 
 
 .nav__logo{
-  height: 120px;
+  height: 100px;
+  padding: 10px 0;
 }
 
 
@@ -116,9 +125,9 @@ $black: #212121;
 }
 
 
-.about, .landing{
+.about, .landing, .abattage, .elagage, .deboisement, .grue, .rognage, .equipement, .contact {
   width: calc(100% - 250px);
-  height: 100vh;
+  min-height: 100vh;
   position: relative;
   margin-left: 250px;
 }
@@ -241,3 +250,88 @@ $black: #212121;
   }
 }
 
+/* Section
+   ========================================================================== */
+.section__container{
+  max-width: 65%;
+  margin: 0 auto;
+  z-index: 2;
+  padding: 100px 0;
+  text-align: center;
+  position: relative;
+  h3{
+    margin-bottom: 20px;
+    font-size: 24px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    position: relative;
+    display: inline-block;
+    text-align: center;
+    &:after{
+      background: $green;
+      height: 2px;
+      width: 50%;
+      content: '';
+      display: inline-block;
+      margin-top: 20px;
+    }
+  }
+}
+
+.section__desc{
+  margin-bottom: 50px;
+}
+
+/* Abattage
+   ========================================================================== */
+
+.abattage{
+  background: url('assets/bg.jpg') no-repeat center center;
+  background-size: cover;
+  h3{
+    color: $green;
+  }
+  p{
+    color: #fff;
+    font-weight: 500;
+    font-size: 18px;
+  }
+  &:after{
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0, .60);
+    display: block;
+    content: '';
+    z-index: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+}
+
+.abattage__note{
+  position: absolute;
+  bottom: 0;
+  right: 20px;
+  p{
+    font-size: 14px;
+    font-weight: 400;
+  }
+}
+
+
+/* owl
+   ========================================================================== */
+
+.owl-element{
+  padding: 20px;
+}
+
+.owl-img{
+  height: 250px;
+  content: '';
+}
+
+.owl-carousel__container{
+  position: relative;
+}
