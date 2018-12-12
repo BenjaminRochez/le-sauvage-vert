@@ -10,7 +10,9 @@ class Picture(models.Model):
     category = models.ForeignKey('Category', on_delete=models.CASCADE)
 
     def __str__(self):
-        return self.title
+        category = str(self.category)
+        title = str(self.title)
+        return title+ ' (' + category + ')'
 
 class Category(models.Model):
     category_title = models.CharField(max_length=250)

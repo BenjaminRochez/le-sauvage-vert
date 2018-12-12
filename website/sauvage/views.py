@@ -5,4 +5,8 @@ from .models import Picture
 def index(request):
     deboisements = Picture.objects.filter(category=1)
     abattages = Picture.objects.filter(category = 2)
-    return render(request, 'sauvage/index.html', {'abattages':abattages, 'deboisements' : deboisements})
+    elagages = Picture.objects.filter(category = 3)
+    grues = Picture.objects.filter(category = 4)
+    rognages = Picture.objects.filter(category = 5)
+    equipements = Picture.objects.filter(category = 6)
+    return render(request, 'sauvage/index.html', {'abattages':abattages, 'deboisements' : deboisements, 'elagages': elagages, 'grues': grues, 'rognages': rognages, 'equipements': equipements})
