@@ -15,13 +15,22 @@ $black: #212121;
    ========================================================================== */
 
 
-
+body{
+  &.pace-delay{
+    .welcome{
+      opacity: 0;
+      pointer-events: none;
+    }
+  }
+}
 /* Welcome
    ========================================================================== */
 .welcome{
+  transition: opacity .6s;
   width: 100%;
   height: 100vh;
-
+  position: fixed;
+  z-index: 999;
   &:after{
     width: 100%;
     height: 100%;
@@ -33,6 +42,15 @@ $black: #212121;
     top: 0;
     left: 0;
   }
+}
+
+.welcome-bg{
+  position: absolute;
+  content: '';
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
 }
 
 .welcome__container{
@@ -351,4 +369,42 @@ $black: #212121;
 
 .owl-next{
   right: -20px;
+}
+
+/* contact
+   ========================================================================== */
+
+.contact{
+  background: $black;
+  color: #fff;
+
+  .section__container{
+    height: 100vh;
+    position: relative;
+  }
+
+  h2{
+    font-weight: bold;
+    margin-bottom: 10px;
+    font-size: 24px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+  ul{
+    margin-bottom: 30px;
+    li{
+      letter-spacing: 2px;
+      margin-bottom: 5px;
+    }
+  }
+  img{
+    max-width: 250px;
+  }
+}
+
+.contact__content{
+  position: absolute;
+  top: 50%;
+  left: calc(50% - 125px);
+  transform: translateY(-50%) translateX(-50%);
 }

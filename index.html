@@ -3,14 +3,15 @@
   <head>
     <meta charset="utf-8">
     <meta name="description" content="Le sauvage vert | Abattage - Elagage - Déboisement">
-    <title>Shockwave | Suspension Center</title>
+    <title>Le sauvage vert | Abattage - Elagage - Déboisement</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700" rel="stylesheet">
     <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">{% load static %}
     <link rel="stylesheet" href="{% static 'import.css' %}">
   </head>
-  <body>
-    <section class="welcome" style="background: url('{% static 'bg.jpg' %}') no-repeat center center;  background-size: cover;">
+  <body class="body">
+    <section class="welcome" style="background: #000;">
+      <div class="welcome-bg" style="background: url('{% static 'b.jpg' %}') no-repeat center center;  background-size: cover;"></div>
       <div class="welcome__container"><img class="welcome__logo" src="{% static 'logo.png' %}">
         <h1 class="welcome__title">A votre service et au service de la nature</h1>
       </div>
@@ -18,15 +19,14 @@
     </section>
     <nav class="nav"><img class="nav__logo" src="{% static 'logo.png' %}">
       <ul class="nav__links">
-        <li><a href="#">Home</a></li>
-        <li><a href="#">A propos</a></li>
-        <li><a href="#">Abattage</a></li>
-        <li><a href="#">Elagage</a></li>
-        <li><a href="#">Déboisement</a></li>
-        <li><a href="#">Démontage à la grue</a></li>
-        <li><a href="#">Rognage des souches</a></li>
-        <li><a href="#">Equipement</a></li>
-        <li><a href="#">Contact</a></li>
+        <li><a class="scrollTo" href="#about">A propos</a></li>
+        <li><a class="scrollTo" href="#abattage">Abattage</a></li>
+        <li><a class="scrollTo" href="#elagage">Elagage</a></li>
+        <li><a class="scrollTo" href="#deboisement">Déboisement</a></li>
+        <li><a class="scrollTo" href="#grue">Démontage à la grue</a></li>
+        <li><a class="scrollTo" href="#rognage">Rognage des souches</a></li>
+        <li><a class="scrollTo" href="#equipement">Equipement</a></li>
+        <li><a class="scrollTo" href="#contact">Contact</a></li>
       </ul>
       <div class="nav__emergency">
         <h4>URGENCES</h4>
@@ -47,7 +47,7 @@
         </ul>
       </div>
     </section>
-    <section class="about">
+    <section class="about" id="about">
       <div class="about__desc">
         <p><span>Société située au cœur du Brabant Wallon,</span>nous nous déplaçons chez vous afin de déterminer l’état de vos arbres et d’établir un devis ajusté en ayant toujours pour but le respect de la nature et de votre environnement.</p>
       </div>
@@ -61,7 +61,7 @@
       </div>
     </section>
     <!-- ABATTAGE-->
-    <section class="abattage" style="background: url('{% static 'bg.jpg' %}') no-repeat center center;  background-size: cover;">
+    <section class="abattage" id="abattage" style="background: url('{% static 'bg.jpg' %}') no-repeat center center;  background-size: cover;">
       <div class="section__container">
         <h3>Abattage</h3>
         <p class="section__desc">Nous abattons vos arbres dangereux ou malades dans des espaces dégagés. Nous procédons aussi par démontage avec rétention dans les endroits plus confinés.</p>
@@ -81,7 +81,7 @@
       </div>
     </section>
     <!-- ELAGAGE-->
-    <section class="abattage" style="background: url('{% static 'bg.jpg' %}') no-repeat center center;  background-size: cover;">
+    <section class="abattage" id="elagage" style="background: url('{% static 'bg.jpg' %}') no-repeat center center;  background-size: cover;">
       <div class="section__container">
         <h3>Elagage</h3>
         <p class="section__desc">Pour la santé de vos arbres remarquables et la beauté de leur silhouette, nous en effectuons une taille douce en allégeant les branches et en retirant le bois mort. Nous élaguons également les arbres envahissants afin de procurer de la lumière à votre propriété.</p>
@@ -99,7 +99,7 @@
       </div>
     </section>
     <!-- DEBOISEMENT-->
-    <section class="abattage" style="background: url('{% static 'bg.jpg' %}') no-repeat center center;  background-size: cover;">
+    <section class="abattage" id="deboisement" style="background: url('{% static 'bg.jpg' %}') no-repeat center center;  background-size: cover;">
       <div class="section__container">
         <h3>Déboisement</h3>
         <p class="section__desc">Vous avez envie de construire sur un terrain boisé, nous pouvons procéder à l’élimination des arbres et des racines afin de dégager l’espace à bâtir.</p>
@@ -119,7 +119,7 @@
       </div>
     </section>
     <!-- GRUE-->
-    <section class="abattage" style="background: url('{% static 'bg.jpg' %}') no-repeat center center;  background-size: cover;">
+    <section class="abattage" id="grue" style="background: url('{% static 'bg.jpg' %}') no-repeat center center;  background-size: cover;">
       <div class="section__container">
         <h3>Démontage à la grue</h3>
         <p class="section__desc">La grue est utilisée principalement dans les endroits inaccessibles et pour préserver les propriétés avoisinantes : technique peu courante dont nous faisons notre spécialité.</p>
@@ -127,7 +127,7 @@
       </div>
     </section>
     <!-- ROGNAGE-->
-    <section class="abattage" style="background: url('{% static 'bg.jpg' %}') no-repeat center center;  background-size: cover;">
+    <section class="abattage" id="rognage" style="background: url('{% static 'bg.jpg' %}') no-repeat center center;  background-size: cover;">
       <div class="section__container">
         <h3>Rognage des souches</h3>
         <p class="section__desc">Pour parachever les travaux d’abattage, nous vous proposons l’élimination des souches par rognage et gyrobroyage, ce qui rendra le terrain prêt à toute nouvelle plantation.</p>
@@ -144,7 +144,7 @@
       </div>
     </section>
     <!-- EQUIPEMENT-->
-    <section class="abattage" style="background: url('{% static 'bg.jpg' %}') no-repeat center center;  background-size: cover;">
+    <section class="abattage" id="equipement" style="background: url('{% static 'bg.jpg' %}') no-repeat center center;  background-size: cover;">
       <div class="section__container">
         <h3>Equipement</h3>
         <p class="section__desc">Nous travaillons avec un matériel de pointe adapté à toutes situations, pour vous offrir un résultat impeccable et répondant à vos attentes.</p>
@@ -155,12 +155,31 @@
                     <div class="owl-img" style="background: url('{{equipement.image.url}}') no-repeat center center; background-size: cover;"></div>
                 </div>
             {% endfor %}
+            
           </div>
+        </div>
+      </div>
+    </section>
+    <!-- CONTACT-->
+    <section class="contact" id="contact">
+      <div class="section__container">
+        <div class="contact__content">
+          <h2>Le sauvage vert SPRL</h2>
+          <ul class="contact__adress">
+            <li>Rue du Charron, 87</li>
+            <li>1420 Braine-l’Alleud</li>
+            <li>TVA: 0668 530 532</li>
+          </ul>
+          <ul class="contact__schedule">
+            <li>Ouverture du Lundi au vendredi</li>
+            <li>9h>18h</li>
+          </ul><img src="{% static 'logo.png' %}">
         </div>
       </div>
     </section>
     <script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>
     <script src="{% static 'owl.carousel.min.js' %}"></script>
+    <script src="{% static 'pace.min.js' %}"></script>
     <script src="{% static 'app.js' %}"></script>
   </body>
 </html>

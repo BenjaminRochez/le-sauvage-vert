@@ -303,11 +303,18 @@ p {
    ========================================================================== */
 /* Site specific
    ========================================================================== */
+body.pace-delay .welcome {
+  opacity: 0;
+  pointer-events: none; }
+
 /* Welcome
    ========================================================================== */
 .welcome {
+  transition: opacity .6s;
   width: 100%;
-  height: 100vh; }
+  height: 100vh;
+  position: fixed;
+  z-index: 999; }
   .welcome:after {
     width: 100%;
     height: 100%;
@@ -318,6 +325,14 @@ p {
     position: absolute;
     top: 0;
     left: 0; }
+
+.welcome-bg {
+  position: absolute;
+  content: '';
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0; }
 
 .welcome__container {
   z-index: 1;
@@ -567,3 +582,31 @@ p {
 
 .owl-next {
   right: -20px; }
+
+/* contact
+   ========================================================================== */
+.contact {
+  background: #212121;
+  color: #fff; }
+  .contact .section__container {
+    height: 100vh;
+    position: relative; }
+  .contact h2 {
+    font-weight: bold;
+    margin-bottom: 10px;
+    font-size: 24px;
+    text-transform: uppercase;
+    letter-spacing: 2px; }
+  .contact ul {
+    margin-bottom: 30px; }
+    .contact ul li {
+      letter-spacing: 2px;
+      margin-bottom: 5px; }
+  .contact img {
+    max-width: 250px; }
+
+.contact__content {
+  position: absolute;
+  top: 50%;
+  left: calc(50% - 125px);
+  transform: translateY(-50%) translateX(-50%); }
