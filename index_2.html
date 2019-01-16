@@ -10,9 +10,6 @@
     <link rel="stylesheet" href="{% static 'import.css' %}">
   </head>
   <body class="body">
-    <div class="background-fixed" style="background: url('{% static 'bg.jpg' %}') no-repeat center center;  background-size: cover;">  
-      <div id="background-after" ></div>
-  </div>
     <section class="welcome" style="background: #000;">
       <div class="welcome-bg" style="background: url('{% static 'b.jpg' %}') no-repeat center center;  background-size: cover;"></div>
       <div class="welcome__container"><img class="welcome__logo" src="{% static 'logo.png' %}">
@@ -22,8 +19,8 @@
     </section>
     <nav class="nav"><img class="nav__logo" src="{% static 'logo.png' %}">
       <ul class="nav__links">
-        <li><a class="scrollTo" href="#about" data-color="transparent">A propos</a></li>
-        <li><a class="scrollTo" href="#abattage" data-color="white">Abattage</a></li>
+        <li><a class="scrollTo" href="#about">A propos</a></li>
+        <li><a class="scrollTo" href="#abattage">Abattage</a></li>
         <li><a class="scrollTo" href="#elagage">Elagage</a></li>
         <li><a class="scrollTo" href="#deboisement">Déboisement</a></li>
         <li><a class="scrollTo" href="#grue">Démontage à la grue</a></li>
@@ -36,13 +33,11 @@
         <p>0472/40.68.31</p>
       </div>
       <ul class="nav__socials">
-        <li><a href="#"><img src="{% static 'fb.png' %}" alt="Logo facebook"></a></li>
-        <li><a href="#"><img src="{% static 'ig.png' %}" alt="Logo instagram"></a></li>
+        <li><a href="#">Fa</a></li>
+        <li><a href="#">Ig</a></li>
       </ul>
     </nav>
-
-    
-    <section class="landing" style="background: transparent">
+    <section class="landing" style="background: url('{% static 'bg.jpg' %}') no-repeat center center;  background-size: cover;">
       <div class="landing__vignette">
         <h4>Arbre menaçant ou dangereux ?</h4>
         <ul>
@@ -52,7 +47,7 @@
         </ul>
       </div>
     </section>
-    <section class="about" id="about" data-color="transparent">
+    <section class="about" id="about">
       <div class="about__desc">
         <p><span>Société située au cœur du Brabant Wallon,</span>nous nous déplaçons chez vous afin de déterminer l’état de vos arbres et d’établir un devis ajusté en ayant toujours pour but le respect de la nature et de votre environnement.</p>
       </div>
@@ -66,7 +61,7 @@
       </div>
     </section>
     <!-- ABATTAGE-->
-    <section class="abattage" id="abattage" style="background: transparent" data-color="black">
+    <section class="abattage" id="abattage" style="background: url('{% static 'bg.jpg' %}') no-repeat center center;  background-size: cover;">
       <div class="section__container">
         <h3>Abattage</h3>
         <p class="section__desc">Nous abattons vos arbres dangereux ou malades dans des espaces dégagés. Nous procédons aussi par démontage avec rétention dans les endroits plus confinés.</p>
@@ -86,7 +81,7 @@
       </div>
     </section>
     <!-- ELAGAGE-->
-    <section class="abattage" id="elagage" style="background: transparent" data-color="white">
+    <section class="abattage" id="elagage" style="background: url('{% static 'bg.jpg' %}') no-repeat center center;  background-size: cover;">
       <div class="section__container">
         <h3>Elagage</h3>
         <p class="section__desc">Pour la santé de vos arbres remarquables et la beauté de leur silhouette, nous en effectuons une taille douce en allégeant les branches et en retirant le bois mort. Nous élaguons également les arbres envahissants afin de procurer de la lumière à votre propriété.</p>
@@ -104,7 +99,7 @@
       </div>
     </section>
     <!-- DEBOISEMENT-->
-    <section class="abattage" id="deboisement" style="background: transparent" data-color="green">
+    <section class="abattage" id="deboisement" style="background: url('{% static 'bg.jpg' %}') no-repeat center center;  background-size: cover;">
       <div class="section__container">
         <h3>Déboisement</h3>
         <p class="section__desc">Vous avez envie de construire sur un terrain boisé, nous pouvons procéder à l’élimination des arbres et des racines afin de dégager l’espace à bâtir.</p>
@@ -124,24 +119,15 @@
       </div>
     </section>
     <!-- GRUE-->
-    <section class="abattage" id="grue" style="background: transparent" data-color="black">
+    <section class="abattage" id="grue" style="background: url('{% static 'bg.jpg' %}') no-repeat center center;  background-size: cover;">
       <div class="section__container">
         <h3>Démontage à la grue</h3>
         <p class="section__desc">La grue est utilisée principalement dans les endroits inaccessibles et pour préserver les propriétés avoisinantes : technique peu courante dont nous faisons notre spécialité.</p>
-        <div class="owl-carousel__container">
-            <div class="owl-carousel owl-theme" style="font-size: 20px">
-              {% for grue in grues.all %}
-                  <div class="owl-element">
-                      <div class="owl-img" style="background: url('{{grue.image.url}}') no-repeat center center; background-size: cover;"></div>
-                  </div>
-              {% endfor %}
-              
-            </div>
-          </div>
+        <h4>VIDEO</h4>
       </div>
     </section>
     <!-- ROGNAGE-->
-    <section class="abattage" id="rognage" style="background: transparent" data-color="green">
+    <section class="abattage" id="rognage" style="background: url('{% static 'bg.jpg' %}') no-repeat center center;  background-size: cover;">
       <div class="section__container">
         <h3>Rognage des souches</h3>
         <p class="section__desc">Pour parachever les travaux d’abattage, nous vous proposons l’élimination des souches par rognage et gyrobroyage, ce qui rendra le terrain prêt à toute nouvelle plantation.</p>
@@ -158,7 +144,7 @@
       </div>
     </section>
     <!-- EQUIPEMENT-->
-    <section class="abattage" id="equipement" style="background: transparent" data-color="white">
+    <section class="abattage" id="equipement" style="background: url('{% static 'bg.jpg' %}') no-repeat center center;  background-size: cover;">
       <div class="section__container">
         <h3>Equipement</h3>
         <p class="section__desc">Nous travaillons avec un matériel de pointe adapté à toutes situations, pour vous offrir un résultat impeccable et répondant à vos attentes.</p>
@@ -178,7 +164,6 @@
     <section class="contact" id="contact">
       <div class="section__container">
         <div class="contact__content">
-          <div class="contact__anim">
           <h2>Le sauvage vert SPRL</h2>
           <ul class="contact__adress">
             <li>Rue du Charron, 87</li>
@@ -190,12 +175,10 @@
             <li>9h>18h</li>
           </ul><img src="{% static 'logo.png' %}">
         </div>
-        </div>
       </div>
     </section>
     <script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>
     <script src="{% static 'owl.carousel.min.js' %}"></script>
-    <script src="{% static 'jquery.waypoints.min.js' %}"></script> 
     <script src="{% static 'pace.min.js' %}"></script>
     <script src="{% static 'app.js' %}"></script>
   </body>

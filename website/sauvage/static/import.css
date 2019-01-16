@@ -383,11 +383,25 @@ body.pace-delay .welcome {
   .nav__links a {
     color: #fff;
     text-decoration: none;
-    padding: 20px 30px;
+    padding: 15px 30px;
     display: block;
-    transition: background 0.3s; }
+    transition: background 0.3s;
+    position: relative; }
+    .nav__links a:after {
+      content: '';
+      display: block;
+      position: absolute;
+      bottom: 0px;
+      left: 0;
+      width: 2px;
+      height: 100%;
+      background: #fff;
+      opacity: 0;
+      transition: opacity 0.1s ease-in; }
     .nav__links a:hover {
       background: #2e2e2e; }
+    .nav__links a.current:after {
+      opacity: 1; }
 
 .nav__emergency {
   height: 75px;
@@ -399,7 +413,20 @@ body.pace-delay .welcome {
     font-weight: bold; }
 
 .nav__socials {
-  height: 45px; }
+  height: 45px;
+  padding: 0 30px;
+  text-align: left; }
+  .nav__socials li {
+    display: inline-block; }
+    .nav__socials li a {
+      padding: 5px; }
+      .nav__socials li a img {
+        max-width: 100%;
+        width: 16px; }
+      .nav__socials li a:hover {
+        opacity: .6; }
+    .nav__socials li:first-of-type {
+      margin-right: 5px; }
 
 .about, .landing, .abattage, .elagage, .deboisement, .grue, .rognage, .equipement, .contact {
   width: calc(100% - 250px);
@@ -422,7 +449,10 @@ body.pace-delay .welcome {
   color: #fff;
   padding: 25px;
   border-bottom-left-radius: 10px;
-  border-top-left-radius: 10px; }
+  border-top-left-radius: 10px;
+  transform: translateX(50%);
+  opacity: 0;
+  transition: opacity 0.3s ease-in, transform 0.2s; }
   .landing__vignette h4 {
     color: #172927;
     font-size: 24px;
@@ -441,6 +471,9 @@ body.pace-delay .welcome {
     margin-bottom: 5px; }
   .landing__vignette .vignette__text {
     font-size: 14px; }
+  .landing__vignette.is-shown {
+    transform: translateX(0);
+    opacity: 1; }
 
 /* About
    ========================================================================== */
@@ -531,23 +564,24 @@ body.pace-delay .welcome {
    ========================================================================== */
 .abattage {
   background: url("assets/bg.jpg") no-repeat center center;
-  background-size: cover; }
+  background-size: cover;
+  /*&:after{
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0, .60);
+    display: block;
+    content: '';
+    z-index: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }*/ }
   .abattage h3 {
     color: #7fb23c; }
   .abattage p {
     color: #fff;
     font-weight: 500;
     font-size: 18px; }
-  .abattage:after {
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.6);
-    display: block;
-    content: '';
-    z-index: 0;
-    position: absolute;
-    top: 0;
-    left: 0; }
 
 .abattage__note {
   position: absolute;
@@ -608,5 +642,65 @@ body.pace-delay .welcome {
 .contact__content {
   position: absolute;
   top: 50%;
-  left: calc(50% - 125px);
+  left: calc(50%);
   transform: translateY(-50%) translateX(-50%); }
+
+.background-fixed {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  content: '';
+  display: block;
+  left: 0;
+  top: 0; }
+
+#background-after {
+  width: 100%;
+  height: 100%;
+  opacity: .7;
+  display: block;
+  content: '';
+  z-index: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: background-color 0.3s ease-in-out; }
+  #background-after.black {
+    background-color: black; }
+  #background-after.green {
+    background-color: #7fb23c; }
+  #background-after.white {
+    background-color: #fff; }
+
+#elagage .section__desc, #equipement .section__desc {
+  color: #212121; }
+
+#deboisement h3, #rognage h3 {
+  color: #fff; }
+
+.abattage .section__container {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: 0.3s opacity ease-in, transform 0.2s; }
+
+.abattage.current .section__container {
+  opacity: 1;
+  transform: translateY(0); }
+
+.about .about__desc p, .about .about__ryan {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: 0.3s opacity ease-in, transform 0.2s; }
+
+.about.current .about__desc p, .about.current .about__ryan {
+  opacity: 1;
+  transform: translateY(0); }
+
+.contact .section__container .contact__anim {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: 0.3s opacity ease-in, transform 0.2s; }
+
+.contact.current .section__container .contact__anim {
+  opacity: 1;
+  transform: translateY(0); }

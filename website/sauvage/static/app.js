@@ -10,18 +10,57 @@ $(document).ready(function(){
   Pace.on("done", function(){
         setTimeout(function () {
             $('.body').addClass('pace-delay');
-            console.log("done");
         }, 200);
+        setTimeout(function(){
+                $('.landing__vignette').addClass('is-shown');
+                
+        }, 300);
     });
 
-  $('.scrollTo').click(function(){
-        //$('.nav__links').removeClass('is-open');
 
-        var the_id = $(this).attr("href");
+    // SCROLLSPY
+    var sections = [];
+    var id = false;
+    var color = false;
+    var $navbar = $('.nav__links');
+    var $navbara = $('a', $navbar);
+    var currColor  = false;
+    var scrolled_id = false;
+    $navbara.click(function(e){
+        e.preventDefault();
         $('html, body').animate({
-            scrollTop:$(the_id).offset().top
-        }, 'slow');
-        return false;
+        scrollTop: $($(this).attr('href')).offset().top
+        });
     });
+
+    $navbara.each(function(){
+        sections.push($($(this).attr('href')));
+    });
+
+    $(window).scroll(function(e){
+        var scrollTop = $(this).scrollTop() + ($(window).height() / 2)
+        for(var i in sections){
+        var section = sections[i];
+        //console.log(color);
+        if (scrollTop > section.offset().top) {
+            scrolled_id = section.attr('id');
+            color = section.attr('data-color');
+        }
+        }
+        if (scrolled_id !== id) {
+            $('#'+id).removeClass('current');
+            id = scrolled_id;
+            $navbara.removeClass('current');
+            $('#'+id).addClass('current');
+            
+            $('a[href="#' + id + '"]', $navbar).addClass('current');
+        }
+
+        if(color !==  currColor){
+            currColor = color;
+            $('#background-after').attr('class', color);
+        }
+    });
+
 
 });
