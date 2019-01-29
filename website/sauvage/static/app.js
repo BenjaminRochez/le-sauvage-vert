@@ -3,7 +3,15 @@ $(document).ready(function(){
       {
           loop: true,
           nav: true,
-          items: 2
+          
+          responsive:{
+              0 : {
+                  items: 1
+              },
+              1080 :{
+                  items: 2
+              }
+          }
       }
   );
 
@@ -18,6 +26,11 @@ $(document).ready(function(){
     });
 
 
+
+    $('.toggler').on('click', function(e){
+        e.preventDefault(); 
+        $('.nav').toggleClass('is-shown');
+    });
     // SCROLLSPY
     var sections = [];
     var id = false;
@@ -31,6 +44,7 @@ $(document).ready(function(){
         $('html, body').animate({
         scrollTop: $($(this).attr('href')).offset().top
         });
+        $('.nav').removeClass('is-shown')
     });
 
     $navbara.each(function(){
